@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Page!</title>
+</head>
+<body>
+<ul>
+    {% for key, value in response_json.items() %}
+    <dt>{{ key }}</dt>
+    <dd>{{ value }}</dd>
+    {% endfor %}
+</ul>
+</body>
+</html>
