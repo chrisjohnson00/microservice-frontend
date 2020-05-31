@@ -19,10 +19,9 @@ def health_check():
 
 @app.route('/page')
 def page():
-    backend_host = get_config("BACKEND_SERVICE_HOST")
     backend_port = get_config("BACKEND_SERVICE_PORT")
     backend_uri = "/api/v1/foobar"
-    resp = requests.get("http://{}:{}{}".format(backend_host, backend_port, backend_uri))
+    resp = requests.get("http://{}:{}{}".format("backend", backend_port, backend_uri))
     print(resp, flush=True)
     txt = resp.text
     print(txt, flush=True)
